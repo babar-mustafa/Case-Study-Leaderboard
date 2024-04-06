@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "paths": {
+      "*": ["src/*"],
+      "@constants/*": ["src/constants/*"],
+      "@screens/*": ["src/screens/*"],
+      "@assets/*": ["src/assets/*"],
+      "@store/*": ["src/state/*"],
+      "@components": ["src/components/index.ts"],
+      "@utils/*": ["src/utils/*"],
+      "@routes/*": ["src/routes/*"],
+    }
+  }
+}
