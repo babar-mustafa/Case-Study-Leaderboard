@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Alert} from 'react-native';
 import {ScreenWrapper, SortIconWrapper, RowContainer} from './styled';
 import {SearchBar} from '@components';
 import {useDispatch, useSelector} from 'react-redux';
@@ -39,12 +40,18 @@ export const Home: React.FC = () => {
   };
 
   const onSearch = () => {
-    setIsSorted(false);
-    dispatch(
-      updateSearchList({
-        search: searchText,
-      }),
-    );
+    if (searchText !== '') {
+      setIsSorted(false);
+      dispatch(
+        updateSearchList({
+          search: searchText,
+        }),
+      );
+    } else {
+      Alert.alert('Infor', 'Please Enter Text To Search', [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ]);
+    }
   };
 
   const handleSorting = () => {
